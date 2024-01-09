@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Prime Number Metrics</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Prime Number Metrics</h1>
+      <div class="input-container">
+        <label for="startRange">Start Range:</label>
+        <input type="number" id="startRange" />
+        <label for="endRange">End Range:</label>
+        <input type="number" id="endRange" />
+        <button onclick="calculateMetrics()">Calculate Metrics</button>
+      </div>
+      <div class="metrics">
+        <h2>Performance Metrics</h2>
+        <p id="metric1">Time taken to run getPrimesInRange:</p>
+        <p id="metric2">Time taken to check if a single number is prime:</p>
+        <p id="metric3">
+          Time taken to check if a number is prime for each prime found:
+        </p>
+        <p id="metric4">
+          Average time for determining primality for all numbers:
+        </p>
+        <button onclick="showDetails()">Show Details</button>
+      </div>
+    </div>
+
+    <div class="popup" id="detailsPopup">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'singleNumber')">
+          Single Number Checks
+        </button>
+        <button class="tablinks" onclick="openTab(event, 'primeNumbers')">
+          Prime Number Checks
+        </button>
+      </div>
+      <div id="singleNumber" class="tabcontent">
+        <h3>Single Number Checks</h3>
+        <table id="singleNumberTable">
+          <!-- Table content will be populated dynamically -->
+        </table>
+      </div>
+      <div id="primeNumbers" class="tabcontent">
+        <h3>Prime Number Checks</h3>
+        <table id="primeNumbersTable">
+          <!-- Table content will be populated dynamically -->
+        </table>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
